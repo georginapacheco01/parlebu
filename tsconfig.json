@@ -34,6 +34,18 @@
       "@app/common/*": [
         "libs/common/src/*"
       ],
+      "@app/event": [
+        "libs/event/src"
+      ],
+      "@app/event-bus": [
+        "libs/event-bus/src"
+      ],
+      "@app/event-bus/*": [
+        "libs/event-bus/src/*"
+      ],
+      "@app/event/*": [
+        "libs/event/src/*"
+      ],
       "@app/events": [
         "libs/events/src"
       ],
