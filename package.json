@@ -7,6 +7,10 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "nest build",
+    "build:gateway": "nest build api-gateway --watch",
+    "build:user": "nest build user-service --watch",
+    "build:course": "nest build course-service",
+    "build:learning": "nest build learning-service",
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
@@ -82,6 +86,8 @@
     "moduleNameMapper": {
       "^@app/auth(|/.*)$": "<rootDir>/libs/auth/src/$1",
       "^@app/common(|/.*)$": "<rootDir>/libs/common/src/$1",
+      "^@app/event(|/.*)$": "<rootDir>/libs/event/src/$1",
+      "^@app/event-bus(|/.*)$": "<rootDir>/libs/event-bus/src/$1",
       "^@app/events(|/.*)$": "<rootDir>/libs/events/src/$1",
       "^@app/nats(|/.*)$": "<rootDir>/libs/nats/src/$1"
     }

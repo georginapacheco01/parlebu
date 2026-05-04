@@ -1,0 +1,29 @@
+version: '3.9'
+
+services:
+  nats:
+    image: nats:latest
+    ports:
+      - "4222:4222"
+
+  user-service:
+    build:
+      context: .
+      dockerfile: apps/user-service/Dockerfile
+    environment:
+      NATS_URL: nats://nats:4222
+    depends_on:
+      - nats
+    ports:
+      - "3001:3001"
+
+  api-gateway:
+    build:
+      context: .
+      dockerfile: apps/api-gateway/Dockerfile
+    environment:
+      NATS_URL: nats://nats:4222
+    depends_on:
+      - nats
+    ports:
+      - "3000:3000"
