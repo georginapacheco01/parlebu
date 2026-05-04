@@ -8,7 +8,6 @@ export class UsersController {
 
   @Post()
   createUser(@Body() body: CreateUserDto) {
-    console.log
     this.eventBus.emit(USER_EVENTS.CREATED, body);
 
     return {
@@ -19,7 +18,7 @@ export class UsersController {
 
   @Get('/users/:id')
   getUser(@Param() id: string) {
-    console.log("FINDING USERS")
+    console.log('FINDING USERS');
     this.eventBus.emit(USER_EVENTS.FIND, id);
     return {
       status: 'return',

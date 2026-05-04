@@ -6,7 +6,7 @@ import { UsersController } from './controllers/user.controller';
 
 @Module({
   imports: [EventBusModule],
-  controllers: [ApiGatewayController,UsersController],
+  controllers: [ApiGatewayController, UsersController],
   providers: [ApiGatewayService],
 })
 export class ApiGatewayModule {}

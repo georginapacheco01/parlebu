@@ -1,16 +1,16 @@
 import { EventBusService } from '@app/event-bus';
 import { Injectable } from '@nestjs/common';
-import { USER_EVENTS } from 'libs/contracts/src';
+import { CreateUserDto, USER_EVENTS } from 'libs/contracts/src';
 
 @Injectable()
 export class UserServiceService {
   constructor(private eventBus: EventBusService) {}
-  
+
   findUser(id): string {
-    return 'Here is ur user mama!'+id;
+    return 'Here is ur user mama!' + id;
   }
 
-  async createUser(dto: any) {
+  createUser(dto: CreateUserDto) {
     const user = { id: '123', ...dto };
 
     this.eventBus.emit(USER_EVENTS.CREATED, {

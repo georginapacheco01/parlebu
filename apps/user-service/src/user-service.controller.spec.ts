@@ -11,6 +11,10 @@ describe('UserServiceController', () => {
       providers: [UserServiceService],
     }).compile();
 
-    userServiceController = app.get<UserServiceController>(UserServiceController);
+    userServiceController = app.get<UserServiceController>(
+      UserServiceController,
+    );
+
+    expect(userServiceController).toBeDefined();
   });
 });
